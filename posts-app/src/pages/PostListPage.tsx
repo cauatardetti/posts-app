@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Typography, CircularProgress } from '@mui/material';
+import { Container, Typography, CircularProgress, Box } from '@mui/material';
 import { getPosts, Post } from '../utils/api';
 import PostCard from '../components/PostCard';
 
@@ -36,12 +36,13 @@ const PostListPage: React.FC = () => {
         Lista de Posts
       </Typography>
       {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          body={post.body}
-        />
+        <Box key={post.id} display="flex" justifyContent="center">
+            <PostCard
+            id={post.id}
+            title={post.title}
+            body={post.body}
+            />
+        </Box>
       ))}
     </Container>
   );
