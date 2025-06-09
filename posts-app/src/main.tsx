@@ -1,15 +1,12 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import PostListPage from './pages/PostListPage';
-import PostDetailsPage from './pages/PostDetailsPage';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
-const App: React.FC = () => {
-  return (
-    <Routes>
-      <Route path="/post" element={<PostListPage />} />
-      <Route path="/dados/:id" element={<PostDetailsPage />} />
-    </Routes>
-  );
-};
-
-export default App;
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+);
