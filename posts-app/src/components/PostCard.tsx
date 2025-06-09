@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography, Box } from '@mui/material';
 import Bookmark from '@mui/icons-material/Bookmark';
+import { useNavigate } from 'react-router-dom';
 
 type PostCardProps = {
   id: number;
@@ -9,8 +10,10 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = ({ id, title, body }) => {
+  const navigate = useNavigate();
   return (
     <Card
+      onClick={() => navigate(`/dados/${id}`)}
       sx={{
         height: 220,
         width: '100%',
