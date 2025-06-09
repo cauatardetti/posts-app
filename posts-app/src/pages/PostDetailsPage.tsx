@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, CircularProgress, Card, CardContent } from '@mui/material';
+import {
+  Container,
+  Typography,
+  CircularProgress,
+  Card,
+  CardContent,
+  Box,
+} from '@mui/material';
 import { getPostById, Post } from '../utils/api';
 
 const PostDetailsPage: React.FC = () => {
@@ -42,13 +49,23 @@ const PostDetailsPage: React.FC = () => {
   }
 
   return (
-    <Container sx={{ mt: 4 }}>
-      <Card variant="outlined">
+    <Container sx={{ mt: 4, maxWidth: 'md' }}>
+      <Card
+        sx={{
+          borderRadius: 3,
+          boxShadow: 3,
+          p: 3,
+        }}
+      >
         <CardContent>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h4" fontWeight="bold" color="primary" gutterBottom>
             {post.title}
           </Typography>
-          <Typography variant="body1">{post.body}</Typography>
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
+              {post.body}
+            </Typography>
+          </Box>
         </CardContent>
       </Card>
     </Container>
