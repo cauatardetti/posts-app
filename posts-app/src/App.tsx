@@ -6,7 +6,7 @@ import PostDetailsPage from './pages/PostDetailsPage';
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/post" element={<PostListPage />} />
+      <Route path="" element={<PostListPage />} />
       <Route path="/dados/:id" element={<PostDetailsPage />} />
     </Routes>
   );
